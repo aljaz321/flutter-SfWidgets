@@ -963,13 +963,10 @@ extension CartesianSeriesExtension<T, D> on CartesianSeriesRenderer<T, D> {
     }
 
     final int digits = parent!.tooltipBehavior!.decimalPlaces;
-    if (!parent!.tooltipBehavior!.shared) {
-      text = tooltipHeaderText(point, digits);
-    }
-
     final bool isLtr = textDirection == TextDirection.ltr;
     final String? tooltipFormat = parent?.tooltipBehavior?.format;
     if (tooltipFormat != null) {
+      text = tooltipHeaderText(point, digits);
       String tooltipText = tooltipFormat.replaceAll('point.x', text);
 
       if (point.y != null) {
@@ -1043,6 +1040,10 @@ extension CartesianSeriesExtension<T, D> on CartesianSeriesRenderer<T, D> {
       tooltipText = tooltipText.replaceAll('series.name', name);
       text = isLtr ? tooltipText : formatRTLText(tooltipText);
     } else {
+      text = parent!.tooltipBehavior!.shared
+          ? name
+          : tooltipHeaderText(point, digits);
+
       if (point.y != null) {
         text = _formatTooltipLabel(point.y!, digits, text, isLtr);
       }
