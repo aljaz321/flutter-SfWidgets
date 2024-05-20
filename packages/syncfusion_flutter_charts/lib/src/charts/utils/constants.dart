@@ -19,7 +19,7 @@ const double dataLabelPadding = 5;
 const double trackballPadding = 10;
 
 // Tooltip padding for smooth touch.
-const double tooltipPadding = 15;
+const double tooltipPadding = 35;
 
 // Hilo and HiloOpenClose series padding.
 const double hiloPadding = 3;
@@ -42,8 +42,7 @@ const double tooltipMarkerSize = 10.0;
 /// Specifies the tooltip marker padding.
 const EdgeInsets tooltipMarkerPadding = EdgeInsets.all(2.0);
 
-const EdgeInsetsDirectional tooltipItemSpacing =
-    EdgeInsetsDirectional.only(end: 3.0);
+const EdgeInsetsDirectional tooltipItemSpacing = EdgeInsetsDirectional.only(end: 3.0);
 
 const EdgeInsets tooltipInnerPadding = EdgeInsets.all(6.0);
 
